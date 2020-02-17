@@ -86,7 +86,13 @@ def movies_with_directors_set(source)
   # to have a :director_name key added to it.
   newArray = []
   index = 0
-  while index < source.size()
+  while index < source.size do
+    mov = source[index][:movies]
+    dirName = source[index][:name]
+    newArray << movies_with_director_key(dirName, mov)
+    index += 1
+  end
+  newArray
 end
 
 # ----------------    End of Your Code Region --------------------
